@@ -211,6 +211,12 @@ console.log(founded);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const sommaEta = utenti.reduce((acc, utenti) => acc + utenti.eta, 0);
+const mediaEta = sommaEta / utenti.length;
+const numUtentiAttivi = utenti.reduce((acc, utenti) => acc + utenti.attivo, 0);
+
+console.log(`età media: ${mediaEta}`);
+console.log(`utenti attivi: ${numUtentiAttivi}`);
 
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.

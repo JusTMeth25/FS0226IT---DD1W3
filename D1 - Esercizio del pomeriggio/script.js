@@ -83,6 +83,12 @@ const persona = {
 const { nome, cognome, eta } = persona;
 console.log(nome, cognome, eta);
 
+const users = utenti.map(({ nome, cognome, eta }) => ({ nome, cognome, eta }));
+users.forEach((user) => {
+  const { nome, cognome, eta } = user;
+  console.log(nome, cognome, eta);
+});
+
 /* ESERCIZIO 3 — Destructuring nei parametri
    Scrivi una arrow function "riepilogo" che riceve un utente e ritorna
    "Nome Cognome (eta anni)" usando destructuring nei parametri.
@@ -172,13 +178,15 @@ const utentiPlus = copiaUtenti.map(
   },
 );
 console.log(utentiPlus[0]);
+
+
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const utenteAttivo = utenti.filter((utenti) => utenti.attivo === true);
+const utenteAttivo = utenti.filter((utenti) => utenti.attivo);
 
 console.log(utenteAttivo);
 
@@ -241,5 +249,8 @@ console.log(`per nome: ['${nomiPerAlfabeto}']`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const Chaining = utenti.filter((utenti) => utenti.attivo) .map((utenti) => `${utenti.nome} ${utenti.cognome}`) .sort();
+const Chaining = utenti
+  .filter((utenti) => utenti.attivo)
+  .map((utenti) => `${utenti.nome} ${utenti.cognome}`)
+  .sort();
 console.log(Chaining);

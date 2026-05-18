@@ -224,6 +224,13 @@ console.log(`utenti attivi: ${numUtentiAttivi}`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const ordinaPerEta = [...utenti].sort((a, b) => a.eta - b.eta);
+const nomiPerEta = ordinaPerEta.map((utenti) => utenti.nome);
+
+const ordinaPerNome = [...utenti].sort((a, b) => a.nome.localeCompare(b.nome));
+const nomiPerAlfabeto = ordinaPerNome.map((utenti) => utenti.nome);
+console.log(`per età: ['${nomiPerEta}']`);
+console.log(`per nome: ['${nomiPerAlfabeto}']`);
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:

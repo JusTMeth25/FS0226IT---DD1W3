@@ -241,3 +241,5 @@ console.log(`per nome: ['${nomiPerAlfabeto}']`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const Chaining = utenti.filter((utenti) => utenti.attivo) .map((utenti) => `${utenti.nome} ${utenti.cognome}`) .sort();
+console.log(Chaining);

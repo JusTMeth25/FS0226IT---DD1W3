@@ -188,6 +188,14 @@ console.log(utenteAttivo);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const utentiMaggiorenni = utenti.filter(
+  (utenti) => utenti.eta >= 18 && utenti.città === "Milano",
+);
+
+const idUtenti = utentiMaggiorenni.map((utenti) => utenti.id).join(",");
+const nomiUtenti = utentiMaggiorenni.map((utenti) => utenti.nome).join(",");
+
+console.log(`utenti maggiorenni a Milano: id ${idUtenti} - ${nomiUtenti}`);
 
 /* ESERCIZIO 12 — find
    Usa find per trovare il primo utente con id === 4.
@@ -195,7 +203,8 @@ console.log(utenteAttivo);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const founded = utenti.find((utenti) => utenti.id === 4);
+console.log(founded);
 /* ESERCIZIO 13 — reduce
    a) Usa reduce per calcolare l'età media (somma età / numero utenti). Stampa.
    b) Usa reduce per contare il numero di utenti attivi. Stampa.

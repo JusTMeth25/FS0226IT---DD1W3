@@ -126,8 +126,8 @@ console.log(unioneFrutti);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const prodotto = {nome: "Cuffie", prezzo: 79.99};
-const nuovoProdotto = {...prodotto, disponibile: true};
+const prodotto = { nome: "Cuffie", prezzo: 79.99 };
+const nuovoProdotto = { ...prodotto, disponibile: true };
 console.log(nuovoProdotto);
 /* ESERCIZIO 7 — forEach
    Stampa tutti gli utenti nel formato "- Nome Cognome (città)".
@@ -135,14 +135,19 @@ console.log(nuovoProdotto);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+utenti.forEach(({ nome, cognome, città }) => {
+  console.log(`- ${nome} ${cognome} (${città})`);
+});
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
    Stampa l'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const nomiCompleti = utenti.map(({ nome, cognome }) => {
+  return `${nome} ${cognome}`;
+});
+console.log(nomiCompleti);
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
    le properties originali + una nuova property "descrizione" con valore
@@ -152,13 +157,30 @@ console.log(nuovoProdotto);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const copiaUtenti = [...utenti];
+const utentiPlus = copiaUtenti.map(
+  ({ id, nome, cognome, eta, attivo, città }) => {
+    return {
+      id,
+      nome,
+      cognome,
+      eta,
+      attivo,
+      città,
+      descrizione: `${nome} ${cognome}, ${città}`,
+    };
+  },
+);
+console.log(utentiPlus[0]);
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const utenteAttivo = utenti.filter((utenti) => utenti.attivo === true);
+
+console.log(utenteAttivo);
 
 /* ESERCIZIO 11 — filter combinato
    Usa filter per ottenere solo gli utenti maggiorenni (eta >= 18) che vivono a Milano.

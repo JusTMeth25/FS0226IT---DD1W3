@@ -240,6 +240,18 @@ const nomiPerAlfabeto = ordinaPerNome.map((utenti) => utenti.nome);
 console.log(`per età: ['${nomiPerEta}']`);
 console.log(`per nome: ['${nomiPerAlfabeto}']`);
 
+// modi alternativi
+const alfabetico = utenti.sort((a, b) => {
+  if (a.nome < b.nome) return -1;
+  if (a.nome > b.nome) return true;
+})
+.map((users) => users.nome);
+console.log(alfabetico);
+
+// modo alternativo 2
+const alfabetico2 = utenti.map((users) => users.nome).sort();
+console.log(`alfabetico2: ${alfabetico2}`);
+
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
    - filtra gli utenti attivi
